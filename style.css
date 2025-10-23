@@ -1,0 +1,137 @@
+*{
+    padding: 0;
+    margin: 0;
+    position:relative;
+    box-sizing: border-box;
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+
+body{
+    width: 100%;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.header{
+    background-color: #082029;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-left: 50px;
+    width: 100%;
+    color: white;
+}
+
+span{
+    font-size: 50px;
+    font-family: "Open Sans", sans-serif;
+}
+
+main{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex: 1;
+    background-color: #05171E;
+}
+
+/* #region Book */
+.book_window{
+    height: 700px;
+    width: 400px;
+    background-color: #082029;
+    border-radius: 20px;
+}
+
+.book_header{
+    height: auto;
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section_1{
+    height: 150px;
+    width: 100%;
+    border-top: solid 3px lightblue;
+    border-bottom: solid 3px lightblue;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.preview{
+    width: 100%;
+    height: 145px;
+}
+
+.section_2{
+    height: 150px;
+    width: 100%;
+    border-bottom: solid 3px lightblue;
+    display:flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 5px;
+}
+
+.header_section2{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 25px;
+    font-weight: bold;
+    color: rgb(255,155,144);
+}
+
+.likes{
+    display: flex;
+    gap: 5px;
+    font-size: 20px;
+}
+
+button{
+    background: none;
+    border: none;
+}
+.like_btn{
+    width: 20px;
+    height: 20px;
+}
+
+.table{
+    font-family: "Open Sans", sans-serif;
+    font-size: 15px;
+    display: flex;
+}
+
+.section_3{
+    padding: 20px;
+    font-size: 20px;
+    font-family: "Open Sans", sans-serif;
+}
+
+.comments{
+    height: 100%;
+}
+
+.book_footer{
+    display: flex;
+}
+/* #endregion */
+
+footer{
+    background-color: #082029;
+    height: 100px;
+    width:  100%;
+}
