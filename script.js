@@ -13,13 +13,23 @@ class Bookinfo {
     this.comments = _comments;
 }
 //Methode zum liken
-likeBook(){
-    this.likes++;
-    this.isLiked = true;
-}
+// likeBook(){
+//    if(this.isLiked == false){
+//     this.likes++;
+//    } else{
+//     this.likes--;
+//    }
+//     this.isLiked = !this.isLiked;
+// }
 //Methode um das Liken zu toggeln
 toggleLike(){
-    this.isLiked = !this.isLiked;
+    if (this.isLiked){
+      `${img.src="./img/btn/heart.jpg"}`;
+        this.likes++;
+    } else {
+        `${img.src="./img/btn/grey-heart.jpg"}`;
+        this.likes--;
+    }
     
 }
 }
@@ -49,11 +59,12 @@ function renderBook(){
     bookCollectionRef.innerHTML = "";
 
     for(let i = 0; i < bookCollection.length; i++)
-        bookCollectionRef.innerHTML += getBookTemplate(bookCollection[i]);
+        bookCollectionRef.innerHTML += getBookTemplate(bookCollection[i],i);
 
     for(let i = 0; i < bookCollection.length; i++){
-        const toggleBtnRef = document.getElementById(`toggle`)
-        toggleBtnRef.addEventListener("click", () => {bookCollection[i].toggleLike()});
-    }
-        
+        const toggleBtnRef = document.getElementById(`toggle${[i]}`)
+        toggleBtnRef.addEventListener("click", () => {bookCollection[i].toggleLike();
+        renderBook();
+    })
+}     
 }

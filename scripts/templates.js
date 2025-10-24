@@ -12,9 +12,8 @@ function getBookTemplate(book,i){
         <section class="section_2">
         <header class="header_section2">${book.price}
         <div class="likes">${book.likes}
-        <button id="toggle">
-        <img class="like_btn" src="./img/btn/heart.jpg">
-        <img class="like_btn" src="./img/btn/grey-heart.png">
+        <button id="toggle${[i]}">
+        <img class="like_btn" src="${Image.src}">
         </button></div></header>
             <div class="table">
             <table>
