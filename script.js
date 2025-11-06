@@ -24,12 +24,13 @@ class Bookinfo {
 //Methode um das Liken zu toggeln
 toggleLike(){
     if (this.isLiked){
-      `${img.src="./img/btn/heart.jpg"}`;
+        document.getElementById(`heart`).src = `./img/btn/heart.jpg`;
         this.likes++;
     } else {
-        `${img.src="./img/btn/grey-heart.jpg"}`;
+        document.getElementById(`heart`).src = `./img/btn/grey-heart.jpg`;
         this.likes--;
     }
+    this.isliked = !this.isLiked;
     
 }
 }
@@ -61,10 +62,8 @@ function renderBook(){
     for(let i = 0; i < bookCollection.length; i++)
         bookCollectionRef.innerHTML += getBookTemplate(bookCollection[i],i);
 
-    for(let i = 0; i < bookCollection.length; i++){
-        const toggleBtnRef = document.getElementById(`toggle${[i]}`)
-        toggleBtnRef.addEventListener("click", () => {bookCollection[i].toggleLike();
-        renderBook();
-    })
+    for(let j = 0; j < bookCollection.length; j++){
+        const togglePicture = document.getElementById(`heart`)
+        togglePicture.onclick= toggleLike();
+    }
 }     
-}

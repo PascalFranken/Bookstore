@@ -100,13 +100,17 @@ main{
     font-size: 20px;
 }
 
-button{
+/* button{
     background: none;
     border: none;
-}
-.like_dislike_btn{
+} */
+.like_btn{
     width: 20px;
     height: 20px;
+}
+
+.like_btn:hover{
+    cursor: pointer;
 }
 
 .table{
