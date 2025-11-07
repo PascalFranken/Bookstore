@@ -1,3 +1,4 @@
+const allComments = [];
 let allBooks = [
     {
       "name": "Die Geheimnisse des Ozeans",
@@ -94,3 +95,11 @@ function renderBook(){
     //     togglePicture.onclick= toggleLike();
     // }
 }     
+
+function addComment(){
+  const commentInputRef = document.getElementById(`addComments`)
+  const commentInput = commentInputRef.value;
+
+  allComments.push(library);
+  renderBook();
+}

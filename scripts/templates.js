@@ -29,9 +29,15 @@ function getBookTemplate(allBooks){
             </section>
             
             <section class="section_3">
-            <header class="header_section3">Kommentare:</header>
-            <div class"comments"></div>
-            <footer id="book_footer"><input type="text"></footer>
+             <h2>Kommentare:</h2>
+            <div class="comments">test</div>
+            <div class="input_field">
+            <input id="addComments" class="input" type="text" placeholder="Schreibe einen Kommentar" required>
+            <input class="input_style" type="submit"
+            </div>
+            </section>
+            </div>
+
 
             
             `}
