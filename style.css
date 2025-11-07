@@ -26,9 +26,10 @@ body{
     color: white;
 }
 
-span{
-    font-size: 50px;
+h1{
+    font-size: 30px;
     font-family: "Open Sans", sans-serif;
+    text-align: center;
 }
 
 main{
@@ -100,10 +101,6 @@ main{
     font-size: 20px;
 }
 
-/* button{
-    background: none;
-    border: none;
-} */
 .like_btn{
     width: 20px;
     height: 20px;
@@ -126,10 +123,15 @@ main{
 }
 
 .comments{
-    height: 100%;
+    display:flex;
+    height: auto;
+    width:100%;
+    flex: 1;
 }
 
-.book_footer{
+#book_footer{
+    width: 100%;
+    height: 100%;
     display: flex;
 }
 /* #endregion */

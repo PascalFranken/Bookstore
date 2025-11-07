@@ -1,18 +1,17 @@
-function getBookTemplate(book){
+function getBookTemplate(allBooks){
    return `<div class="book_window"><header class="book_header">
-        <span>${book.title}</span>
+        <h1>${allBooks.name}</h2>
         </header>
          
         <section class="section_1">
         <img class="preview" 
-        src=${book.path} 
-        alt="Rundes, blaues Logo mit einer weißen Darstellung eines geöffneten Buches und dem Schriftzug BOOKSTORE">
+        src=${allBooks.cover}
+        alt=${allBooks.alt}>
         </section>
         
         <section class="section_2">
-        <header class="header_section2">${book.price}
-        <div class="likes">${book.likes}
-        
+        <header class="header_section2">${allBooks.price}
+        <div class="likes">${allBooks.likes}
         <img id="heart" class="like_btn" src="">
         </div></header>
             <div class="table">
@@ -22,9 +21,9 @@ function getBookTemplate(book){
                 <tr><td>Genre:</td></tr>
             </table>
             <table>
-                <tr><td>${book.author}</td></tr>
-                <tr><td>${book.year}</td></tr>
-                <tr><td>${book.genre}</td></tr>
+                <tr><td>${allBooks.author}</td></tr>
+                <tr><td>${allBooks.publishedYear}</td></tr>
+                <tr><td>${allBooks.genre}</td></tr>
             </table>
             </div>
             </section>
@@ -32,7 +31,7 @@ function getBookTemplate(book){
             <section class="section_3">
             <header class="header_section3">Kommentare:</header>
             <div class"comments"></div>
-            <footer class"book_footer"><input type="text"></footer>
+            <footer id="book_footer"><input type="text"></footer>
 
             
             `}
