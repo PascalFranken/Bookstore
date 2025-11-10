@@ -122,9 +122,9 @@ main{
     height: 100%;
     width: 100%;
     padding: 20px;
-    
     display:flex;
     flex-direction: column;
+    justify-content: space-between;
     
 }
 
@@ -134,25 +134,43 @@ h2{
     font-family: "Open Sans", sans-serif;
 }
 
-.comments{
+/* .table_and_input_field{
+    display:flex;
+    flex-direction: column;
+    width: 100%;
     height: 100%;
-    width:100%;
+} */
+
+.table_comments{
+    height: 100%;
+    width:100%;  
+    overflow-y: auto;
+    display:flex;
+    flex-direction: row;
 }
 
-.input_field{
+.input_field_container{
     display:flex;
     border-color: lightblue;
     border-width: 5px;
+    height: auto;
+    width: 100%;
 }
 
 .input{
-    width: 100%;
-    
+    width: 100%;   
+    height: auto;
 }
 
 .input_style{
     background-color: lightblue;
+    height: auto;
 }
+
+/* table{
+    display:flex;
+    flex-direction: column;
+} */
 /* #endregion */
 
 footer{

@@ -1,4 +1,7 @@
-const allComments = [];
+const firstBookComments = [];
+const secondBookComments = [];
+const thirdBookComments = [];
+
 let allBooks = [
     {
       "name": "Die Geheimnisse des Ozeans",
@@ -10,25 +13,28 @@ let allBooks = [
       "price": "19.99€",
       "publishedYear": 2018,
       "genre": "Fantasy",
+      "table": "id='comments'",
+      "input": `id= addComments class=input type=text placeholder="Schreibe einen Kommentar" required`,
+      "submitBtn": "class=input_style type=submit onclick=addComment()",
       "comments": [
         {
-          "name": "Leser123",
+          "name": "Leser123:",
           "comment": "Ein faszinierendes Abenteuerbuch, das mich von der ersten Seite an gefesselt hat."
         },
         {
-          "name": "Bookworm84",
+          "name": "Bookworm84:",
           "comment": "Eine romantische Geschichte, die mein Herz berührt und mich zum Nachdenken gebracht hat."
         },
         {
-          "name": "FantasyFanatic",
+          "name": "FantasyFanatic:",
           "comment": "Eine spannende Fantasiewelt, die ich nur schwer aus der Hand legen konnte."
         },
         {
-          "name": "SciFiGuru",
+          "name": "SciFiGuru:",
           "comment": "Ein cleverer Science-Fiction-Roman mit interessanten Zeitreise-Konzepten und Charakteren."
         },
         {
-          "name": "NovelLover",
+          "name": "NovelLover:",
           "comment": "Ein Buch, das voller magischer Überraschungen steckt und mich begeistert hat."
         }
       ]
@@ -43,6 +49,9 @@ let allBooks = [
       "price": "14.50€",
       "publishedYear": 2021,
       "genre": "Fantasy",
+      "table": "id=comments_2",
+      "input": `id=addSecondComments class=input type=text placeholder="Schreibe einen Kommentar" required`,
+      "submitBtn": "class=input_style type=submit onclick=addSecondComment()",
       "comments": []
     },
     {
@@ -55,6 +64,9 @@ let allBooks = [
       "price": "22.95€",
       "publishedYear": 2019,
       "genre": "Romantik",
+      "table": "id=comments_3",
+      "input": `id=addThirdComments class=input type=text placeholder="Schreibe einen Kommentar" required`,
+      "submitBtn": "class=input_style type=submit onclick=addThirdComment()",
       "comments": [
         {
           "name": "LeserPeter",
@@ -94,12 +106,81 @@ function renderBook(){
     //     const togglePicture = document.getElementById(`heart`)
     //     togglePicture.onclick= toggleLike();
     // }
-}     
-
+}  
+// #region addComment
 function addComment(){
   const commentInputRef = document.getElementById(`addComments`)
   const commentInput = commentInputRef.value;
 
-  allComments.push(library);
-  renderBook();
+  firstBookComments.push(commentInput);
+  renderComments();
+  commentInputRef.value = "";
 }
+
+function addSecondComment(){
+  const commentInputRef = document.getElementById(`addSecondComments`)
+  const commentInput = commentInputRef.value;
+
+  secondBookComments.push(commentInput);
+  renderSecondComments();
+  commentInputRef.value = "";
+}
+
+function addThirdComment(){
+  const commentInputRef = document.getElementById(`addThirdComments`)
+  const commentInput = commentInputRef.value;
+
+  thirdBookComments.push(commentInput);
+  renderThirdComments();
+  commentInputRef.value = "";
+}
+// #endregion
+// #region renderComments
+function renderComments(){
+  const commentsRef = document.getElementById(`comments`)
+  commentsRef.innerHTML = "";
+
+  for(let i = 0; i < firstBookComments.length; i++)
+    commentsRef.innerHTML += getCommentTemplate(i);
+}
+
+function renderSecondComments(){
+  const commentsRef = document.getElementById(`comments_2`)
+  commentsRef.innerHTML = "";
+
+  for(let i = 0; i < secondBookComments.length; i++)
+    commentsRef.innerHTML += getSecondCommentTemplate(i);
+}
+
+function renderThirdComments(){
+  const commentsRef = document.getElementById(`comments_3`)
+  commentsRef.innerHTML = "";
+
+  for(let i = 0; i < thirdBookComments.length; i++)
+    commentsRef.innerHTML += getThirdCommentTemplate(i);
+}
+// #endregion
+// #region other comments
+// function renderComments(){
+//   const commentsRef = document.getElementById(`comments`)
+//   commentsRef.innerHTML = "";
+
+//   for(let i = 0; i < allBooks.comments.length; i++)
+//     commentsRef.innerHTML += getOtherCommentTemplate(i);
+// }
+
+// function renderOtherSecondComments(){
+//   const commentsRef = document.getElementById(`comments_2`)
+//   commentsRef.innerHTML = "";
+
+//   for(let i = 0; i < secondBookComments.length; i++)
+//     commentsRef.innerHTML += getOtherSecondCommentTemplate(i);
+// }
+
+// function renderOtherThirdComments(){
+//   const commentsRef = document.getElementById(`comments_3`)
+//   commentsRef.innerHTML = "";
+
+//   for(let i = 0; i < thirdBookComments.length; i++)
+//     commentsRef.innerHTML += getOtherThirdCommentTemplate(i);
+// }

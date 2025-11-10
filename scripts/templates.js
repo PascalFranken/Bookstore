@@ -1,4 +1,4 @@
-function getBookTemplate(allBooks){
+function getBookTemplate(allBooks, ){
    return `<div class="book_window"><header class="book_header">
         <h1>${allBooks.name}</h2>
         </header>
@@ -30,11 +30,27 @@ function getBookTemplate(allBooks){
             
             <section class="section_3">
              <h2>Kommentare:</h2>
-            <div class="comments">test</div>
-            <div class="input_field">
-            <input id="addComments" class="input" type="text" placeholder="Schreibe einen Kommentar" required>
-            <input class="input_style" type="submit"
-            </div>
+            
+             <table class="table_comments" ${allBooks.table}>
+             <tr></tr>
+             <tr></tr>
+             <tr><td><p>${allBooks.comments[0].name}</p></td></tr>
+             <tr><td><p>${allBooks.comments[0].comment}</p></td></tr>
+             <tr><td><p>${allBooks.comments[1].name}</p></td></tr>
+             <tr><td><p>${allBooks.comments[1].comment}</p></td></tr>
+             <tr><td><p>${allBooks.comments[2].name}</p></td></tr>
+             <tr><td><p>${allBooks.comments[2].comment}</p></td></tr>
+             <tr><td><p>${allBooks.comments[3].name}</p></td></tr>
+             <tr><td><p>${allBooks.comments[3].comment}</p></td></tr>
+             <tr><td><p>${allBooks.comments[4].name}</p></td></tr>
+             <tr><td><p>${allBooks.comments[4].comment}</p></td></tr>
+             </table>
+             <div class="input_field_container">
+             <input ${allBooks.input}>
+             <input ${allBooks.submitBtn}>
+             </div>
+            
+            
             </section>
             </div>
 
@@ -42,4 +58,38 @@ function getBookTemplate(allBooks){
             
             `}
 
+function getCommentTemplate(indexComments){
+    return/*html*/`
+        <td><p>[Pascal]:</p></td>
+        <td>${firstBookComments[indexComments]}</td></tr>`;
+}
 
+function getSecondCommentTemplate(indexComments){
+    return/*html*/`
+        <td><p>[Pascal]:</p></td>
+        <td>${secondBookComments[indexComments]}</td></tr>`;
+}
+
+function getThirdCommentTemplate(indexComments){
+    return/*html*/`
+        <td><p>[Pascal]:</p></td>
+        <td>${thirdBookComments[indexComments]}</td></tr>`;
+}
+
+// function getOtherCommentTemplate(indexComments){
+//     return/*html*/`
+//         <td><p>[Pascal]:</p></td>
+//         <td>${firstBookComments[indexComments]}</td></tr>`;
+// }
+
+// function getOtherSecondCommentTemplate(indexComments){
+//     return/*html*/`
+//         <td><p>[Pascal]:</p></td>
+//         <td>${secondBookComments[indexComments]}</td></tr>`;
+// }
+
+// function getOtherThirdCommentTemplate(indexComments){
+//     return/*html*/`
+//         <td><p>[Pascal]:</p></td>
+//         <td>${thirdBookComments[indexComments]}</td></tr>`;
+// }
