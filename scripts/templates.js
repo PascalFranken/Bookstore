@@ -30,23 +30,14 @@ function getBookTemplate(allBooks, ){
             
             <section class="section_3">
              <h2>Kommentare:</h2>
-            
-             <table class="table_comments" ${allBooks.table}>
-             <tr></tr>
-             <tr></tr>
-             <tr><td><p>${allBooks.comments[0].name}</p></td></tr>
-             <tr><td><p>${allBooks.comments[0].comment}</p></td></tr>
-             <tr><td><p>${allBooks.comments[1].name}</p></td></tr>
-             <tr><td><p>${allBooks.comments[1].comment}</p></td></tr>
-             <tr><td><p>${allBooks.comments[2].name}</p></td></tr>
-             <tr><td><p>${allBooks.comments[2].comment}</p></td></tr>
-             <tr><td><p>${allBooks.comments[3].name}</p></td></tr>
-             <tr><td><p>${allBooks.comments[3].comment}</p></td></tr>
-             <tr><td><p>${allBooks.comments[4].name}</p></td></tr>
-             <tr><td><p>${allBooks.comments[4].comment}</p></td></tr>
+             <div class="table_comments">
+             <table  ${allBooks.table}>
+             
+             
              </table>
+             </div>
              <div class="input_field_container">
-             <input ${allBooks.input}>
+             <textarea ${allBooks.input}></textarea> 
              <input ${allBooks.submitBtn}>
              </div>
             
@@ -60,19 +51,19 @@ function getBookTemplate(allBooks, ){
 
 function getCommentTemplate(indexComments){
     return/*html*/`
-        <td><p>[Pascal]:</p></td>
-        <td>${firstBookComments[indexComments]}</td></tr>`;
+        <tr><td><p>[Pascal]:</p></td>
+        <td class="td"><p>${firstBookComments[indexComments]}</p></td></tr>`;
 }
 
 function getSecondCommentTemplate(indexComments){
     return/*html*/`
-        <td><p>[Pascal]:</p></td>
+        <tr><td><p>[Pascal]:</p></td>
         <td>${secondBookComments[indexComments]}</td></tr>`;
 }
 
 function getThirdCommentTemplate(indexComments){
     return/*html*/`
-        <td><p>[Pascal]:</p></td>
+        <tr><td><p>[Pascal]:</p></td>
         <td>${thirdBookComments[indexComments]}</td></tr>`;
 }
 

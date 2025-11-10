@@ -110,27 +110,27 @@ function renderBook(){
 // #region addComment
 function addComment(){
   const commentInputRef = document.getElementById(`addComments`)
-  const commentInput = commentInputRef.value;
+  const commentInput = commentInputRef.value.replace(/\n/g, "<br>");
 
-  firstBookComments.push(commentInput);
+  firstBookComments.unshift(commentInput);
   renderComments();
   commentInputRef.value = "";
 }
 
 function addSecondComment(){
   const commentInputRef = document.getElementById(`addSecondComments`)
-  const commentInput = commentInputRef.value;
+  const commentInput = commentInputRef.value.replace(/\n/g, "<br>");
 
-  secondBookComments.push(commentInput);
+  secondBookComments.unshift(commentInput);
   renderSecondComments();
   commentInputRef.value = "";
 }
 
 function addThirdComment(){
   const commentInputRef = document.getElementById(`addThirdComments`)
-  const commentInput = commentInputRef.value;
+  const commentInput = commentInputRef.value.replace(/\n/g, "<br>");
 
-  thirdBookComments.push(commentInput);
+  thirdBookComments.unshift(commentInput);
   renderThirdComments();
   commentInputRef.value = "";
 }

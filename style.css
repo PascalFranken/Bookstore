@@ -5,6 +5,7 @@
     box-sizing: border-box;
     text-decoration: none;
     scroll-behavior: smooth;
+    color: lightblue;
 }
 
 body{
@@ -134,19 +135,18 @@ h2{
     font-family: "Open Sans", sans-serif;
 }
 
-/* .table_and_input_field{
-    display:flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-} */
-
 .table_comments{
-    height: 100%;
+    height: 232px;
     width:100%;  
     overflow-y: auto;
-    display:flex;
-    flex-direction: row;
+    max-width: 100%; 
+    table-layout: fixed;
+}
+
+.td{
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 .input_field_container{
@@ -160,11 +160,13 @@ h2{
 .input{
     width: 100%;   
     height: auto;
+    color: black;
 }
 
 .input_style{
     background-color: lightblue;
     height: auto;
+    color: black;
 }
 
 /* table{
