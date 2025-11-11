@@ -107,9 +107,24 @@ main{
 .like_btn{
     width: 20px;
     height: 20px;
+    background-image: url("./img/btn/heart.jpg");
+    background-size: cover;
+    background-color: #082029;
+}
+
+.dislikeBtn{
+    width: 20px;
+    height: 20px;
+    background-image: url("./img/btn/grey-heart.png");
+    background-size: cover;
+    background-color: #082029;
 }
 
 .like_btn:hover{
+    cursor: pointer;
+}
+
+.dislikeBtn:hover{
     cursor: pointer;
 }
 

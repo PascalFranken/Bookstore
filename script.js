@@ -10,13 +10,13 @@ let allBooks = [
       "author": "Clara Meer",
       "likes": 1250,
       "liked": true,
+      "btn": "class='like_btn'",
       "price": "19.99€",
       "publishedYear": 2018,
       "genre": "Fantasy",
-      "table": "id='comments'",
       "input": `id= addComments class=input type=text placeholder="Schreibe einen Kommentar" `,
       "submitBtn": "class=input_style type=submit onclick=addComment()",
-      "bookOneComments": [
+      "comments": [
         {
           "name": "Leser123:",
           "comment": "Ein faszinierendes Abenteuerbuch, das mich von der ersten Seite an gefesselt hat."
@@ -42,10 +42,10 @@ let allBooks = [
       "author": "Maximilian Schwarz",
       "likes": 980,
       "liked": false,
+      "btn": "class='dislikeBtn'",
       "price": "14.50€",
       "publishedYear": 2021,
       "genre": "Fantasy",
-      "table": "id=comments_2",
       "input": `id=addSecondComments class=input type=text placeholder="Schreibe einen Kommentar" required`,
       "submitBtn": "class=input_style type=submit onclick=addSecondComment()",
       "comments": []
@@ -57,10 +57,10 @@ let allBooks = [
       "author": "Laura Blau",
       "likes": 1520,
       "liked": true,
+      "btn": "class='like_btn'",
       "price": "22.95€",
       "publishedYear": 2019,
       "genre": "Romantik",
-      "table": "id=comments_3",
       "input": `id=addThirdComments class=input type=text placeholder="Schreibe einen Kommentar" required`,
       "submitBtn": "class=input_style type=submit onclick=addThirdComment()",
       "comments": [
@@ -93,16 +93,24 @@ let allBooks = [
 //Ins HTML rendern
 function renderBook(){
     const allBooksRef = document.getElementById('allBooks')
+    
     allBooksRef.innerHTML = "";
+    
 
-    for(let i = 0; i < allBooks.length; i++)
-        allBooksRef.innerHTML += getBookTemplate(allBooks[i]);
+    for(let i = 0; i < allBooks.length; i++){
+      allBooksRef.innerHTML += getBookTemplate(allBooks[i]);
 
-    // for(let j = 0; j < bookCollection.length; j++){
-    //     const togglePicture = document.getElementById(`heart`)
-    //     togglePicture.onclick= toggleLike();
-    // }
-}  
+      const allDefaultCommentsRef = document.getElementById('comments')
+      allDefaultCommentsRef.innerHTML = "";
+
+      for(let j = 0; j < allBooks[i].comments.length; j++){
+        allDefaultCommentsRef.innerHTML += getDefaultCommentTemplate(allBooks[i].comments[j]);
+      }
+      
+    }
+        
+    }
+ 
 // #region addComment
 function addComment(){
   const commentInputRef = document.getElementById(`addComments`)
@@ -113,7 +121,7 @@ function addComment(){
       firstBookComments.unshift(commentInput);
   }else{}
 
-  renderComments();
+  // renderComments();
   commentInputRef.value = "";
 }
 
@@ -144,13 +152,13 @@ function addThirdComment(){
 }
 // #endregion
 // #region renderComments
-function renderComments(){
-  const commentsRef = document.getElementById(`comments`)
-  commentsRef.innerHTML = "";
+// function renderComments(){
+//   const commentsRef = document.getElementById(``)
+//   commentsRef.innerHTML = "";
 
-  for(let i = 0; i < firstBookComments.length; i++)
-    commentsRef.innerHTML += getOwnCommentTemplate(i);
-}
+//   for(let i = 0; i < firstBookComments.length; i++)
+//     commentsRef.innerHTML += getOwnCommentTemplate(i);
+// }
 
 function renderSecondComments(){
   const commentsRef = document.getElementById(`comments_2`)
@@ -167,17 +175,28 @@ function renderThirdComments(){
   for(let i = 0; i < thirdBookComments.length; i++)
     commentsRef.innerHTML += getOwnThirdCommentTemplate(i);
 }
+
+function toggleBtn(){
+  
+
+  if(allBooks.liked == true){
+    document.getElementById('heart').classList.toggle('dislikeBtn');
+  }else{
+    // document.getElementById('heart').classList.toggle('like_btn');
+  }
+    
+}
 // #endregion
 // #region other comments
-function addOtherComments(){
-  const commentsRef = document.getElementById(`comments`)
-  commentsRef.innerHTML = "";
+// function addOtherComments(){
+//   const commentsRef = document.getElementById(`comments`)
+//   commentsRef.innerHTML = "";
   
-  for(let i = 0; i < allBooks.bookOneComments.length; i++){
-    firstBookComments.push(allBooks.bookOneComments[i])
-    commentsRef.innerHTML += getOtherCommentTemplate(i);
-}
-}
+//   for(let i = 0; i < allBooks.bookOneComments.length; i++){
+//     firstBookComments.push(allBooks.bookOneComments[i])
+//     commentsRef.innerHTML += getOtherCommentTemplate(i);
+// }
+// }
 // function renderOtherSecondComments(){
 //   const commentsRef = document.getElementById(`comments_2`)
 //   commentsRef.innerHTML = "";

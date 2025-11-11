@@ -1,18 +1,22 @@
-function getBookTemplate(allBooks){
-   return `<div class="book_window"><header class="book_header">
-        <h1>${allBooks.name}</h2>
+function getBookTemplate(i){
+   return /*html*/`
+    
+    <div class="book_window"><header class="book_header">
+        <h1>${i.name}</h2>
         </header>
          
         <section class="section_1">
         <img class="preview" 
-        src=${allBooks.cover}
-        alt=${allBooks.alt}>
+        src=${i.cover}
+        alt=${i.alt}>
         </section>
         
         <section class="section_2">
-        <header class="header_section2">${allBooks.price}
-        <div class="likes">${allBooks.likes}
-        <img id="heart" class="like_btn" src="">
+        <header class="header_section2">${i.price}
+        <div class="likes">${i.likes}
+         <button id="heart" ${i.btn} onclick="toggleBtn()">
+        
+        </button>
         </div></header>
             <div class="table">
             <table>
@@ -21,9 +25,9 @@ function getBookTemplate(allBooks){
                 <tr><td>Genre:</td></tr>
             </table>
             <table>
-                <tr><td>${allBooks.author}</td></tr>
-                <tr><td>${allBooks.publishedYear}</td></tr>
-                <tr><td>${allBooks.genre}</td></tr>
+                <tr><td>${i.author}</td></tr>
+                <tr><td>${i.publishedYear}</td></tr>
+                <tr><td>${i.genre}</td></tr>
             </table>
             </div>
             </section>
@@ -31,16 +35,15 @@ function getBookTemplate(allBooks){
             <section class="section_3">
              <h2>Kommentare:</h2>
              <div class="table_comments">
-             <table  ${allBooks.table}>
+             <table>
              
              </table>
              </div>
              <div class="input_field_container">
-             <textarea ${allBooks.input} required></textarea> 
-             <input ${allBooks.submitBtn}>
+             <textarea ${i.input} required></textarea> 
+             <input ${i.submitBtn}>
              </div>
-            
-            
+
             </section>
             </div>
 
@@ -67,9 +70,10 @@ function getOwnThirdCommentTemplate(indexComments){
         <td class="td"><p>${thirdBookComments[indexComments]}</p></td></tr>`;
 }
 
-function getOtherCommentTemplate(indexComments){
+function getDefaultCommentTemplate(comment){
     return/*html*/`
-        <tr><td><p>${firstBookComments[indexComments]}</p></td></tr>`;
+        <tr><td><p>${comment.name}</p></td>
+        <td class="td"><p>${comment.comment}</p></td></tr>`;
 }
 
 // function getOtherSecondCommentTemplate(indexComments){
@@ -83,3 +87,11 @@ function getOtherCommentTemplate(indexComments){
 //         <td><p>[Pascal]:</p></td>
 //         <td>${thirdBookComments[indexComments]}</td></tr>`;
 // }
+
+
+
+
+
+
+// <!-- <tr><td>${allBooks[0].bookOneComments[0].name}</td></tr>;
+//              <tr><td>${allBooks[0].bookOneComments[0].comment}</td></tr>; -->
