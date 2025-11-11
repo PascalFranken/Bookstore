@@ -149,6 +149,10 @@ h2{
     word-break: break-word;
 }
 
+td{
+    vertical-align: top;
+}
+
 .input_field_container{
     display:flex;
     border-color: lightblue;

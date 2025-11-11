@@ -1,4 +1,4 @@
-function getBookTemplate(allBooks, ){
+function getBookTemplate(allBooks){
    return `<div class="book_window"><header class="book_header">
         <h1>${allBooks.name}</h2>
         </header>
@@ -33,11 +33,10 @@ function getBookTemplate(allBooks, ){
              <div class="table_comments">
              <table  ${allBooks.table}>
              
-             
              </table>
              </div>
              <div class="input_field_container">
-             <textarea ${allBooks.input}></textarea> 
+             <textarea ${allBooks.input} required></textarea> 
              <input ${allBooks.submitBtn}>
              </div>
             
@@ -49,29 +48,29 @@ function getBookTemplate(allBooks, ){
             
             `}
 
-function getCommentTemplate(indexComments){
+// #region
+function getOwnCommentTemplate(indexComments){
     return/*html*/`
         <tr><td><p>[Pascal]:</p></td>
         <td class="td"><p>${firstBookComments[indexComments]}</p></td></tr>`;
 }
 
-function getSecondCommentTemplate(indexComments){
+function getOwnSecondCommentTemplate(indexComments){
     return/*html*/`
         <tr><td><p>[Pascal]:</p></td>
-        <td>${secondBookComments[indexComments]}</td></tr>`;
+        <td class="td"><p>${secondBookComments[indexComments]}</p></td></tr>`;
 }
 
-function getThirdCommentTemplate(indexComments){
+function getOwnThirdCommentTemplate(indexComments){
     return/*html*/`
         <tr><td><p>[Pascal]:</p></td>
-        <td>${thirdBookComments[indexComments]}</td></tr>`;
+        <td class="td"><p>${thirdBookComments[indexComments]}</p></td></tr>`;
 }
 
-// function getOtherCommentTemplate(indexComments){
-//     return/*html*/`
-//         <td><p>[Pascal]:</p></td>
-//         <td>${firstBookComments[indexComments]}</td></tr>`;
-// }
+function getOtherCommentTemplate(indexComments){
+    return/*html*/`
+        <tr><td><p>${firstBookComments[indexComments]}</p></td></tr>`;
+}
 
 // function getOtherSecondCommentTemplate(indexComments){
 //     return/*html*/`

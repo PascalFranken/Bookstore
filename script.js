@@ -14,9 +14,9 @@ let allBooks = [
       "publishedYear": 2018,
       "genre": "Fantasy",
       "table": "id='comments'",
-      "input": `id= addComments class=input type=text placeholder="Schreibe einen Kommentar" required`,
+      "input": `id= addComments class=input type=text placeholder="Schreibe einen Kommentar" `,
       "submitBtn": "class=input_style type=submit onclick=addComment()",
-      "comments": [
+      "bookOneComments": [
         {
           "name": "Leser123:",
           "comment": "Ein faszinierendes Abenteuerbuch, das mich von der ersten Seite an gefesselt hat."
@@ -27,11 +27,7 @@ let allBooks = [
         },
         {
           "name": "FantasyFanatic:",
-          "comment": "Eine spannende Fantasiewelt, die ich nur schwer aus der Hand legen konnte."
-        },
-        {
-          "name": "SciFiGuru:",
-          "comment": "Ein cleverer Science-Fiction-Roman mit interessanten Zeitreise-Konzepten und Charakteren."
+          "comment": "Eine spannende Naturgeschichte, die ich nur schwer aus der Hand legen konnte."
         },
         {
           "name": "NovelLover:",
@@ -112,7 +108,11 @@ function addComment(){
   const commentInputRef = document.getElementById(`addComments`)
   const commentInput = commentInputRef.value.replace(/\n/g, "<br>");
 
-  firstBookComments.unshift(commentInput);
+  if(commentInputRef.value.replace(/\n/g, "<br>")){
+
+      firstBookComments.unshift(commentInput);
+  }else{}
+
   renderComments();
   commentInputRef.value = "";
 }
@@ -121,7 +121,11 @@ function addSecondComment(){
   const commentInputRef = document.getElementById(`addSecondComments`)
   const commentInput = commentInputRef.value.replace(/\n/g, "<br>");
 
-  secondBookComments.unshift(commentInput);
+  if(commentInputRef.value.replace(/\n/g, "<br>")){
+
+    secondBookComments.unshift(commentInput);
+  }else{}
+
   renderSecondComments();
   commentInputRef.value = "";
 }
@@ -130,7 +134,11 @@ function addThirdComment(){
   const commentInputRef = document.getElementById(`addThirdComments`)
   const commentInput = commentInputRef.value.replace(/\n/g, "<br>");
 
-  thirdBookComments.unshift(commentInput);
+  if(commentInputRef.value.replace(/\n/g, "<br>")){
+
+    thirdBookComments.unshift(commentInput);
+  }else{}
+
   renderThirdComments();
   commentInputRef.value = "";
 }
@@ -141,7 +149,7 @@ function renderComments(){
   commentsRef.innerHTML = "";
 
   for(let i = 0; i < firstBookComments.length; i++)
-    commentsRef.innerHTML += getCommentTemplate(i);
+    commentsRef.innerHTML += getOwnCommentTemplate(i);
 }
 
 function renderSecondComments(){
@@ -149,7 +157,7 @@ function renderSecondComments(){
   commentsRef.innerHTML = "";
 
   for(let i = 0; i < secondBookComments.length; i++)
-    commentsRef.innerHTML += getSecondCommentTemplate(i);
+    commentsRef.innerHTML += getOwnSecondCommentTemplate(i);
 }
 
 function renderThirdComments(){
@@ -157,18 +165,19 @@ function renderThirdComments(){
   commentsRef.innerHTML = "";
 
   for(let i = 0; i < thirdBookComments.length; i++)
-    commentsRef.innerHTML += getThirdCommentTemplate(i);
+    commentsRef.innerHTML += getOwnThirdCommentTemplate(i);
 }
 // #endregion
 // #region other comments
-// function renderComments(){
-//   const commentsRef = document.getElementById(`comments`)
-//   commentsRef.innerHTML = "";
-
-//   for(let i = 0; i < allBooks.comments.length; i++)
-//     commentsRef.innerHTML += getOtherCommentTemplate(i);
-// }
-
+function addOtherComments(){
+  const commentsRef = document.getElementById(`comments`)
+  commentsRef.innerHTML = "";
+  
+  for(let i = 0; i < allBooks.bookOneComments.length; i++){
+    firstBookComments.push(allBooks.bookOneComments[i])
+    commentsRef.innerHTML += getOtherCommentTemplate(i);
+}
+}
 // function renderOtherSecondComments(){
 //   const commentsRef = document.getElementById(`comments_2`)
 //   commentsRef.innerHTML = "";
@@ -183,4 +192,9 @@ function renderThirdComments(){
 
 //   for(let i = 0; i < thirdBookComments.length; i++)
 //     commentsRef.innerHTML += getOtherThirdCommentTemplate(i);
+// }
+
+// for (let index = 0; index < array.length; index++) {
+//   const element = array[index];
+  
 // }
