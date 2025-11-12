@@ -14,7 +14,7 @@ let allBooks = [
       "price": "19.99€",
       "publishedYear": 2018,
       "genre": "Fantasy",
-      "input": `id= addComments class=input type=text placeholder="Schreibe einen Kommentar" `,
+      // "input": `id= addComments class=input type=text placeholder="Schreibe einen Kommentar" `,
       "submitBtn": "class=input_style type=submit onclick=addComment()",
       "comments": [
         {
@@ -46,7 +46,7 @@ let allBooks = [
       "price": "14.50€",
       "publishedYear": 2021,
       "genre": "Fantasy",
-      "input": `id=addSecondComments class=input type=text placeholder="Schreibe einen Kommentar" required`,
+      // "input": `id=addSecondComments class=input type=text placeholder="Schreibe einen Kommentar" required`,
       "submitBtn": "class=input_style type=submit onclick=addSecondComment()",
       "comments": []
     },
@@ -61,7 +61,7 @@ let allBooks = [
       "price": "22.95€",
       "publishedYear": 2019,
       "genre": "Romantik",
-      "input": `id=addThirdComments class=input type=text placeholder="Schreibe einen Kommentar" required`,
+      // "input": `id=addThirdComments class=input type=text placeholder="Schreibe einen Kommentar" required`,
       "submitBtn": "class=input_style type=submit onclick=addThirdComment()",
       "comments": [
         {
@@ -101,7 +101,7 @@ function renderBook(){
       allBooksRef.innerHTML += getBookTemplate(allBooks[i]);
 
       const allDefaultCommentsRef = document.getElementById('comments')
-      allDefaultCommentsRef.innerHTML = "";
+      allDefaultCommentsRef.innerHTML ="";
 
       for(let j = 0; j < allBooks[i].comments.length; j++){
         allDefaultCommentsRef.innerHTML += getDefaultCommentTemplate(allBooks[i].comments[j]);

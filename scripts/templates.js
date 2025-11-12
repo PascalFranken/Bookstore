@@ -14,7 +14,7 @@ function getBookTemplate(i){
         <section class="section_2">
         <header class="header_section2">${i.price}
         <div class="likes">${i.likes}
-         <button id="heart" ${i.btn} onclick="toggleBtn()">
+         <!-- <button id="heart" ${i.btn} onclick="toggleBtn()"> -->
         
         </button>
         </div></header>
@@ -35,7 +35,7 @@ function getBookTemplate(i){
             <section class="section_3">
              <h2>Kommentare:</h2>
              <div class="table_comments">
-             <table>
+             <table >
              
              </table>
              </div>
