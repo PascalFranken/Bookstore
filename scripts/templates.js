@@ -35,13 +35,12 @@ function getBookTemplate(i){
             <section class="section_3">
              <h2>Kommentare:</h2>
              <div class="table_comments">
-             <table id="defaultComments">
-             
+             <table id = "defaultComments${[i]}">
              </table>
              </div>
              <div class="input_field_container">
-             <textarea ${allBooks[i].input} required></textarea> 
-             <input ${allBooks[i].submitBtn}>
+             <textarea class=input type=text placeholder="Schreibe einen Kommentar" id = "addComments${[i]}" required></textarea> 
+             <input class=input_style type=submit onclick = "addComment()">
              </div>
 
             </section>
@@ -52,10 +51,16 @@ function getBookTemplate(i){
             `}
 
 // #region
-function getOwnCommentTemplate(indexComments){
+function getDefaultCommentTemplate(i,j){
+    return/*html*/`
+        <tr><td><p>${allBooks[i].comments[j].name}</p></td>
+        <td class="td"><p>${allBooks[i].comments[j].comment}</p></td></tr>`;
+}
+
+function getOwnCommentTemplate(i){
     return/*html*/`
         <tr><td><p>[Pascal]:</p></td>
-        <td class="td"><p>${firstBookComments[indexComments]}</p></td></tr>`;
+        <td class="td"><p>${allBooks[i].comments}</p></td></tr>`;
 }
 
 function getOwnSecondCommentTemplate(indexComments){
@@ -70,11 +75,7 @@ function getOwnThirdCommentTemplate(indexComments){
         <td class="td"><p>${thirdBookComments[indexComments]}</p></td></tr>`;
 }
 
-function getDefaultCommentTemplate(comment){
-    return/*html*/`
-        <tr><td><p>${comment.name}</p></td>
-        <td class="td"><p>${comment.comment}</p></td></tr>`;
-}
+
 
 // function getOtherSecondCommentTemplate(indexComments){
 //     return/*html*/`

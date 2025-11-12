@@ -5,35 +5,30 @@ const thirdBookComments = [];
 //Ins HTML rendern
 function renderBook(){
     const allBooksRef = document.getElementById('allBooks')
-    
     allBooksRef.innerHTML = "";
-    
-
     for(let i = 0; i < allBooks.length; i++){
       allBooksRef.innerHTML += getBookTemplate(i);
-
-      const allDefaultCommentsRef = document.getElementById('defaultComments')
+      const allDefaultCommentsRef = document.getElementById(`defaultComments${[i]}`)
       allDefaultCommentsRef.innerHTML ="";
-
       for(let j = 0; j < allBooks[i].comments.length; j++){
-        allDefaultCommentsRef.innerHTML += getDefaultCommentTemplate(allBooks[i].comments[j]);
-      }
-      
-    }
-        
-    }
+        allDefaultCommentsRef.innerHTML += getDefaultCommentTemplate(i,j);
+      }}}
  
 // #region addComment
 function addComment(){
-  const commentInputRef = document.getElementById(`addComments`)
+  const commentInputRef = document.getElementById(`addComments${[i]}`)
   const commentInput = commentInputRef.value.replace(/\n/g, "<br>");
+  const allDefaultCommentsRef = document.getElementById(`defaultComments${[i]}`)
+  allDefaultCommentsRef.innerHTML ="";
+  
 
   if(commentInputRef.value.replace(/\n/g, "<br>")){
+    }else{}
 
-      firstBookComments.unshift(commentInput);
-  }else{}
+    // for(let i = 0; i < allBooks[i].comments.length; i++){
+        allDefaultCommentsRef.unshift(commentInput);
+        allDefaultCommentsRef.innerHTML += getOwnCommentTemplate(i);
 
-  // renderComments();
   commentInputRef.value = "";
 }
 
@@ -56,7 +51,12 @@ function addThirdComment(){
 
   if(commentInputRef.value.replace(/\n/g, "<br>")){
 
-    thirdBookComments.unshift(commentInput);
+    for(let i = 0; i < allBooks[i].comments.length; i++){
+
+        comments.unshift(commentInput);
+    }
+
+    
   }else{}
 
   renderThirdComments();

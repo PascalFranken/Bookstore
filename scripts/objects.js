@@ -10,24 +10,21 @@ let allBooks = [
       "price": "19.99€",
       "publishedYear": 2018,
       "genre": "Fantasy",
-      // "input": `id= addComments class=input type=text placeholder="Schreibe einen Kommentar" `,
-      "submitBtn": "class=input_style type=submit onclick=addComment()",
-      
       "comments": [
         {
-          "name": "Leser123:",
+          "name": "[Leser123]:",
           "comment": "Ein faszinierendes Abenteuerbuch, das mich von der ersten Seite an gefesselt hat."
         },
         {
-          "name": "Bookworm84:",
+          "name": "[Bookworm84]:",
           "comment": "Eine romantische Geschichte, die mein Herz berührt und mich zum Nachdenken gebracht hat."
         },
         {
-          "name": "FantasyFanatic:",
+          "name": "[FantasyFanatic]:",
           "comment": "Eine spannende Naturgeschichte, die ich nur schwer aus der Hand legen konnte."
         },
         {
-          "name": "NovelLover:",
+          "name": "[NovelLover]:",
           "comment": "Ein Buch, das voller magischer Überraschungen steckt und mich begeistert hat."
         }
       ]
@@ -42,10 +39,25 @@ let allBooks = [
       "btn": "class='dislikeBtn'",
       "price": "14.50€",
       "publishedYear": 2021,
-      "genre": "Fantasy",
-      // "input": `id=addSecondComments class=input type=text placeholder="Schreibe einen Kommentar" required`,
-      "submitBtn": "class=input_style type=submit onclick=addSecondComment()",
-      "comments": []
+      "genre": "Science",
+      "comments": [
+        {
+          "name": "[LeseRatte]:",
+          "comment": "Dieses Buch vermittelt viel Wissen über den Mond."
+        },
+        {
+          "name": "[BookNerd001]:",
+          "comment": "Der Mond ist deutlich faszinierender als ich anfangs dachte."
+        },
+        {
+          "name": "[Darkreader05]:",
+          "comment": "Ich kann jedem, der sich auch nur ansatzweise für das Weltall interessiert, sehr empfehlen dieses Buch zu lesen."
+        },
+        {
+          "name": "[Boo(K)ing]:",
+          "comment": "Dieses Buch ist den Preis definitiv wert."
+        }
+      ]
     },
     {
       "name": "Der letzte Sonnenuntergang",
@@ -58,28 +70,26 @@ let allBooks = [
       "price": "22.95€",
       "publishedYear": 2019,
       "genre": "Romantik",
-      // "input": `id=addThirdComments class=input type=text placeholder="Schreibe einen Kommentar" required`,
-      "submitBtn": "class=input_style type=submit onclick=addThirdComment()",
       "comments": [
         {
-          "name": "LeserPeter",
+          "name": "[LeserPeter]:",
           "comment": "Die Handlung war fesselnd und die Charaktere unglaublich lebendig dargestellt."
         },
         {
-          "name": "BookLover21",
+          "name": "[BookLover21]:",
           "comment": "Ein romantisches Meisterwerk, das mich tief berührt und bewegt hat."
         },
         {
-          "name": "FantasyNerd",
-          "comment": "Fantastische Welten und epische Abenteuer - genau mein Geschmack!"
+          "name": "[FantasyNerd]:",
+          "comment": "Bei jedem Sonnenuntergang den ich sehe muss ich an dieses Buch denken."
         },
         {
-          "name": "SciFiEnthusiast",
-          "comment": "Die Zeitreise-Elemente waren genial und haben die Story spannend gemacht."
+          "name": "[SciFiEnthusiast]:",
+          "comment": "Ich wollte mich unbedingt mal mit einem anderen Genre außer Sci-Fi beschäftigen und habe mit diesem Buch einen Volltreffer gelandet."
         },
         {
-          "name": "ReadingAddict",
-          "comment": "Ein unvergessliches Buch, das mich auf eine magische Reise mitgenommen hat."
+          "name": "[ReadingAddict]:",
+          "comment": "Ein unvergessliches Buch, das mich auf eine schöne Reise mitgenommen hat."
         }
       ]
     }
