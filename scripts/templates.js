@@ -2,18 +2,18 @@ function getBookTemplate(i){
    return /*html*/`
     
     <div class="book_window"><header class="book_header">
-        <h1>${i.name}</h2>
+        <h1>${allBooks[i].name}</h2>
         </header>
          
         <section class="section_1">
         <img class="preview" 
-        src=${i.cover}
-        alt=${i.alt}>
+        src=${allBooks[i].cover}
+        alt=${allBooks[i].alt}>
         </section>
         
         <section class="section_2">
-        <header class="header_section2">${i.price}
-        <div class="likes">${i.likes}
+        <header class="header_section2">${allBooks[i].price}
+        <div class="likes">${allBooks[i].likes}
          <!-- <button id="heart" ${i.btn} onclick="toggleBtn()"> -->
         
         </button>
@@ -25,9 +25,9 @@ function getBookTemplate(i){
                 <tr><td>Genre:</td></tr>
             </table>
             <table>
-                <tr><td>${i.author}</td></tr>
-                <tr><td>${i.publishedYear}</td></tr>
-                <tr><td>${i.genre}</td></tr>
+                <tr><td>${allBooks[i].author}</td></tr>
+                <tr><td>${allBooks[i].publishedYear}</td></tr>
+                <tr><td>${allBooks[i].genre}</td></tr>
             </table>
             </div>
             </section>
@@ -35,13 +35,13 @@ function getBookTemplate(i){
             <section class="section_3">
              <h2>Kommentare:</h2>
              <div class="table_comments">
-             <table >
+             <table id="defaultComments">
              
              </table>
              </div>
              <div class="input_field_container">
-             <textarea ${i.input} required></textarea> 
-             <input ${i.submitBtn}>
+             <textarea ${allBooks[i].input} required></textarea> 
+             <input ${allBooks[i].submitBtn}>
              </div>
 
             </section>
