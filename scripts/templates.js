@@ -13,8 +13,8 @@ function getBookTemplate(i){
         
         <section class="section_2">
         <header class="header_section2">${allBooks[i].price}
-        <div class="likes">${allBooks[i].likes}
-         <!-- <button id="heart" ${i.btn} onclick="toggleBtn()"> -->
+        <div class="likes"><p id="number${i}" >${allBooks[i].likes}</p>
+         <button id="heart${i}" onclick="toggleBtn(${i})">
         
         </button>
         </div></header>
@@ -35,12 +35,12 @@ function getBookTemplate(i){
             <section class="section_3">
              <h2>Kommentare:</h2>
              <div class="table_comments">
-             <table id = "defaultComments${[i]}">
+             <table id = "defaultComments${i}">
              </table>
              </div>
              <div class="input_field_container">
              <textarea class=input type=text placeholder="Schreibe einen Kommentar" id = "addComments${[i]}" required></textarea> 
-             <input class=input_style type=submit onclick = "addComment(${i})">
+             <input class=input_style type=submit onclick = "addComment(${[i]})">
              </div>
 
             </section>
