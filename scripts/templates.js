@@ -40,7 +40,7 @@ function getBookTemplate(i){
              </div>
              <div class="input_field_container">
              <textarea class=input type=text placeholder="Schreibe einen Kommentar" id = "addComments${[i]}" required></textarea> 
-             <input class=input_style type=submit onclick = "addComment()">
+             <input class=input_style type=submit onclick = "addComment(${i})">
              </div>
 
             </section>
@@ -59,8 +59,8 @@ function getDefaultCommentTemplate(i,j){
 
 function getOwnCommentTemplate(i){
     return/*html*/`
-        <tr><td><p>[Pascal]:</p></td>
-        <td class="td"><p>${allBooks[i].comments}</p></td></tr>`;
+        
+        `;
 }
 
 function getOwnSecondCommentTemplate(indexComments){
